@@ -1,0 +1,20 @@
+import React from 'react';
+import { Text } from 'react-native';
+import { Screen } from '@components';
+{{#if useProxy}}
+import { useSnapshot } from 'valtio';
+import { /* yourProxyState */ } from '@proxies';
+{{/if}}
+
+function {{pascalCase name}}Screen() {
+{{#if useProxy}}
+  const snap = useSnapshot(/* yourProxyState */);
+{{/if}}
+  return (
+    <Screen>
+      <Text>{{pascalCase name}} Screen</Text>
+    </Screen>
+  )
+};
+
+export default {{pascalCase name}}Screen
